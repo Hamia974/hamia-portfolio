@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #faf8f4;
+  --bg-subtle: #f2efe6;
+  --bg-inverse: #0a0b0c;
+  --fg: #0e0f10;
+  --fg-muted: #5a5f63;
+  --fg-faint: #6d7276;
+  --border: #e3ddd0;
+  --border-strong: #cfc7b4;
+  --accent: #237a56;
+  --accent-soft: rgba(35, 122, 86, 0.13);
+  --gold: #a9782f;
+  --card: #ffffff;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0a0b0c;
+  --bg-subtle: #131517;
+  --bg-inverse: #faf8f4;
+  --fg: #f4f2ec;
+  --fg-muted: #9a9fa4;
+  --fg-faint: #767c81;
+  --border: #202428;
+  --border-strong: #2c3136;
+  --accent: #4fe3a5;
+  --accent-soft: rgba(79, 227, 165, 0.13);
+  --gold: #eec472;
+  --card: #101214;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0b0c;
+    --bg-subtle: #131517;
+    --bg-inverse: #faf8f4;
+    --fg: #f4f2ec;
+    --fg-muted: #9a9fa4;
+    --fg-faint: #767c81;
+    --border: #202428;
+    --border-strong: #2c3136;
+    --accent: #4fe3a5;
+    --accent-soft: rgba(79, 227, 165, 0.13);
+    --gold: #eec472;
+    --card: #101214;
+    color-scheme: dark;
+  }
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  transition: background-color 0.4s var(--ease-signature, cubic-bezier(0.16, 1, 0.3, 1)),
+    color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg-inverse);
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.container-content {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-content {
+    padding-inline: 2.5rem;
+  }
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.noise-fade {
+  background-image: radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* --- Ambient background system --- */
+
+.section-edge {
+  position: relative;
+}
+
+.section-edge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-strong) 18%,
+    var(--border-strong) 82%,
+    transparent
+  );
+}
+
+.bg-grid-fade {
+  background-image: linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 68px 68px;
+  opacity: 0.65;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 82%, transparent 97%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 14%,
+    black 82%,
+    transparent 97%
+  );
+}
+
+.ambient-glow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+  filter: blur(40px);
+  opacity: 0.9;
+}
+
+.ambient-glow-a {
+  animation: drift-a 46s ease-in-out infinite;
+}
+
+.ambient-glow-b {
+  animation: drift-b 58s ease-in-out infinite;
+}
+
+.flow-line {
+  animation: flow-dash 32s linear infinite;
+}
+
+.flow-node {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--accent);
+  box-shadow: 0 0 8px 1px var(--accent-soft);
+  animation: node-pulse 7s ease-in-out infinite;
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+
+@keyframes node-pulse {
+  0%,
+  100% {
+    opacity: 0.24;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(16px, -22px);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-18px, 18px);
+  }
+}
+
+/* --- Hero signature flow (Data -> Transform -> Model -> Intelligence) --- */
+
+.signature-flow-dash {
+  animation: flow-dash 16s linear infinite;
+}
+
+.signature-node-glow {
+  animation: node-pulse 6s ease-in-out infinite;
+}
