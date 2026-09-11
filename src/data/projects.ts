@@ -1,5 +1,6 @@
 export type ProjectCategory =
   | "data-engineering"
+  | "business-intelligence"
   | "machine-learning"
   | "full-stack"
   | "cloud"
@@ -7,6 +8,7 @@ export type ProjectCategory =
 
 export const categoryLabels: Record<ProjectCategory, string> = {
   "data-engineering": "Data Engineering",
+  "business-intelligence": "Business Intelligence",
   "machine-learning": "Machine Learning",
   "full-stack": "Full Stack",
   cloud: "Cloud",
@@ -154,6 +156,47 @@ export const projects: Project[] = [
     ],
     contribution:
       "Designed and deployed the infrastructure following cloud computing best practices for security and scalability.",
+  },
+
+  {
+    id: "sales-bi-dashboard",
+    name: "Sales & Business Intelligence Dashboard",
+    category: "business-intelligence",
+    featured: true,
+    visual: "dashboard",
+    problem:
+      "Raw sales data across products, regions and time needs to become clear, decision-ready insight instead of static reports.",
+    built:
+      "An interactive Power BI dashboard built on cleaned sales data, with full data modeling, Power Query transformations, DAX measures, KPIs and drill-down analysis.",
+    stack: ["Power BI", "Power Query", "DAX", "Data Modeling"],
+    features: [
+      "Data modeling and Power Query ETL transformations",
+      "DAX measures and KPIs for revenue and profit",
+      "Drill-down analysis across products and regions",
+      "Sales trend and regional performance visualizations",
+    ],
+    contribution:
+      "Built the full dashboard end to end — data modeling, Power Query transformations, DAX measures, KPIs and business-focused visualizations covering revenue, profit, sales trends, product performance and regional insights.",
+  },
+  {
+    id: "ecommerce-bi-dashboard",
+    name: "E-Commerce Business Intelligence Dashboard",
+    category: "business-intelligence",
+    featured: true,
+    visual: "dashboard",
+    problem:
+      "E-commerce orders, products, customers and delivery data are hard to read as separate tables — the business needs one place to see performance end to end.",
+    built:
+      "An end-to-end Power BI dashboard analyzing orders, revenue, profit, products, customers and delivery performance on a star schema.",
+    stack: ["Power BI", "Power Query", "DAX", "Star Schema"],
+    features: [
+      "Star schema data model for scalable analysis",
+      "Power Query ETL for orders, products and customer data",
+      "Advanced DAX calculations for revenue and profit",
+      "Customer and delivery performance insights",
+    ],
+    contribution:
+      "Designed the end-to-end dashboard — star schema modeling, Power Query ETL, DAX calculations and interactive business insight visualizations.",
   },
 
   // Archive-only projects

@@ -8,6 +8,7 @@ import { projects, categoryLabels, type ProjectCategory } from "@/data/projects"
 const filters: Array<{ id: "all" | ProjectCategory; label: string }> = [
   { id: "all", label: "All" },
   { id: "data-engineering", label: categoryLabels["data-engineering"] },
+  { id: "business-intelligence", label: categoryLabels["business-intelligence"] },
   { id: "machine-learning", label: categoryLabels["machine-learning"] },
   { id: "full-stack", label: categoryLabels["full-stack"] },
   { id: "cloud", label: categoryLabels.cloud },

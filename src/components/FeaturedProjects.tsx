@@ -13,7 +13,7 @@ export default function FeaturedProjects() {
         <SectionHeading
           kicker="Featured Work"
           title="Case studies, not screenshots"
-          description="Six projects that best show the range — from deep learning to cloud infrastructure to full stack systems people can actually use."
+          description="Eight projects that best show the range — from business intelligence dashboards to deep learning, cloud infrastructure and full stack systems people can actually use."
         />
 
         <div className="mt-16 flex flex-col gap-20 md:gap-24">
