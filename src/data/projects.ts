@@ -179,6 +179,28 @@ export const projects: Project[] = [
       "Built the full dashboard end to end — data modeling, Power Query transformations, DAX measures, KPIs and business-focused visualizations covering revenue, profit, sales trends, product performance and regional insights.",
   },
   {
+    id: "ecommerce-etl-orchestration",
+    name: "E-Commerce ETL Pipeline Orchestration",
+    category: "data-engineering",
+    featured: true,
+    visual: "etl",
+    problem:
+      "E-commerce data pipelines need to run reliably on a schedule — not just execute once, but recover from failures and stay observable in production.",
+    built:
+      "An end-to-end ETL pipeline using Python and Pandas to clean, validate, transform and load e-commerce data into PostgreSQL, orchestrated with Apache Airflow and Docker.",
+    stack: ["Python", "Pandas", "Airflow", "PostgreSQL", "Docker"],
+    features: [
+      "Data cleaning, validation and transformation with Pandas",
+      "Loading into PostgreSQL with a repeatable schema",
+      "Airflow DAG orchestration with task monitoring and logging",
+      "Automatic retries and containerized deployment via Docker",
+    ],
+    contribution:
+      "Built the full pipeline end to end — Pandas-based cleaning and transformation, PostgreSQL loading, and Airflow/Docker orchestration with monitoring, logging and automatic retries.",
+    link: "https://github.com/Hamia974/ecommerce-airflow-etl",
+    linkLabel: "View on GitHub",
+  },
+  {
     id: "ecommerce-bi-dashboard",
     name: "E-Commerce Business Intelligence Dashboard",
     category: "business-intelligence",
