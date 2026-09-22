@@ -201,6 +201,26 @@ export const projects: Project[] = [
     linkLabel: "View on GitHub",
   },
   {
+    id: "ecommerce-data-engineering-pipeline",
+    name: "E-Commerce Data Engineering Pipeline",
+    category: "data-engineering",
+    featured: true,
+    visual: "etl",
+    problem:
+      "Multi-source e-commerce order, customer and product data needs to be cleaned and modeled into trustworthy, analytics-ready revenue metrics — not just loaded raw into a warehouse.",
+    built:
+      "An end-to-end data pipeline using Python and Pandas to clean, validate and transform multi-source order, customer and product data before loading it into PostgreSQL, with dbt staging, intermediate and mart models built on top.",
+    stack: ["Python", "Pandas", "PostgreSQL", "dbt", "Docker"],
+    features: [
+      "Multi-source data cleaning, validation and transformation with Pandas",
+      "dbt staging, intermediate and mart models using source() and ref()",
+      "Data quality tests and documentation in dbt",
+      "Analytics-ready customer revenue models",
+    ],
+    contribution:
+      "Built the full pipeline end to end — Python/Pandas ingestion and cleaning, PostgreSQL loading, and dbt modeling with source()/ref(), data tests, documentation and analytics-ready customer revenue models.",
+  },
+  {
     id: "ecommerce-bi-dashboard",
     name: "E-Commerce Business Intelligence Dashboard",
     category: "business-intelligence",

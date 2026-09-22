@@ -27,7 +27,7 @@ export const whatIBuild = [
     title: "Data Engineering",
     description:
       "ETL pipelines that extract, clean, transform and load real-world data — with logging, validation and quality checks built in, not bolted on.",
-    tech: ["Python", "Pandas", "PostgreSQL", "SQL", "ETL", "Data Warehousing"],
+    tech: ["Python", "Pandas", "PostgreSQL", "SQL", "ETL", "dbt", "Data Warehousing"],
   },
   {
     id: "machine-learning",
